@@ -1,10 +1,12 @@
 # hopto
 
-Simple clojure code to test Collatz conjecture implementations
+Simple clojure code to test [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) implementations
 
 ## Usage
 
+```
 lein run n
+```
 
 where n will time running Collatz conjecture on the numbers 1 to n
 
