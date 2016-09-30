@@ -8,7 +8,7 @@
         (doseq [[i num] (map-indexed vector steps)]
           (swap! cache assoc num (+ i 1 cached)))
         (+ (count steps) cached))
-      (if (= (mod n 2) 0)
+      (if (even? n)
         (recur (/ n 2) (conj steps n))
         (recur (inc (* 3 n)) (conj steps n))))))
 
@@ -17,7 +17,7 @@
          i 0]
     (cond
       (= n 1) i
-      (= (mod n 2) 0) (recur (/ n 2) (inc i))
+      (even? n) (recur (/ n 2) (inc i))
       :else (recur (inc (* 3 n)) (inc i)))))
 
 (defn test-hopto-helper [n f msg]
